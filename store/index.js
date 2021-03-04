@@ -1,0 +1,26 @@
+export const state = () => ({
+    user: {},
+    users: [],
+    messages: [],
+    rooms: []
+})
+
+export const mutations = {
+    setUser(state, user) {
+        state.user = user
+    },
+    clearData(state) {
+        state.user = {}
+        state.users = []
+        state.messages = []
+    },
+    SOCKET_newMessage(state, message) {
+        state.messages.push(message)
+    },
+    SOCKET_addRoom(state, room) {
+        state.rooms.push(room)
+    },
+    SOCKET_updateUsers(state, users) {
+        state.users = users
+    }
+}
